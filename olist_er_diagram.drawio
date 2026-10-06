@@ -1,79 +1,85 @@
-<mxfile host="app.diagrams.net" agent="ChatGPT">
-  <diagram id="olist-er" name="Olist ER Diagram">
-    <mxGraphModel dx="1562" dy="867" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1800" pageHeight="1200" math="0" shadow="0">
-      <root>
-        <mxCell id="0" />
-        <mxCell id="1" parent="0" />
-        <mxCell id="customers" parent="1" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;fontSize=12;align=left;spacingLeft=8;verticalAlign=top;spacingTop=8;" value="&lt;b&gt;CUSTOMERS&lt;/b&gt;&lt;br&gt;PK customer_id&lt;br&gt;customer_unique_id&lt;br&gt;customer_zip_code_prefix&lt;br&gt;customer_city&lt;br&gt;customer_state" vertex="1">
-          <mxGeometry height="150" width="260" x="520" y="250" as="geometry" />
-        </mxCell>
-        <mxCell id="payments" parent="1" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#f8cecc;strokeColor=#b85450;fontSize=12;align=left;spacingLeft=8;verticalAlign=top;spacingTop=8;" value="&lt;b&gt;ORDER_PAYMENTS&lt;/b&gt;&lt;br&gt;PK/FK order_id&lt;br&gt;PK payment_sequential&lt;br&gt;payment_type&lt;br&gt;payment_installments&lt;br&gt;payment_value" vertex="1">
-          <mxGeometry height="140" width="270" x="960" y="520" as="geometry" />
-        </mxCell>
-        <mxCell id="reviews" parent="1" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#e1d5e7;strokeColor=#9673a6;fontSize=12;align=left;spacingLeft=8;verticalAlign=top;spacingTop=8;" value="&lt;b&gt;ORDER_REVIEWS&lt;/b&gt;&lt;br&gt;FK order_id&lt;br&gt;PK review_id&lt;br&gt;review_score&lt;br&gt;review_comment_title&lt;br&gt;review_comment_message&lt;br&gt;review_creation_date&lt;br&gt;review_answer_timestamp" vertex="1">
-          <mxGeometry height="160" width="280" x="950" y="700" as="geometry" />
-        </mxCell>
-        <mxCell id="products" parent="1" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366;fontSize=12;align=left;spacingLeft=8;verticalAlign=top;spacingTop=8;" value="&lt;b&gt;PRODUCTS&lt;/b&gt;&lt;br&gt;PK product_id&lt;br&gt;FK category_name&lt;br&gt;product_name_length&lt;br&gt;product_description_length&lt;br&gt;product_photos_qty&lt;br&gt;product_weight_g&lt;br&gt;product_length_cm&lt;br&gt;product_height_cm&lt;br&gt;product_width_cm" vertex="1">
-          <mxGeometry height="190" width="300" x="40" y="60" as="geometry" />
-        </mxCell>
-        <mxCell id="sellers" parent="1" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;fontSize=12;align=left;spacingLeft=8;verticalAlign=top;spacingTop=8;" value="&lt;b&gt;SELLERS&lt;/b&gt;&lt;br&gt;PK seller_id&lt;br&gt;seller_zip_code_prefix&lt;br&gt;seller_city&lt;br&gt;seller_state" vertex="1">
-          <mxGeometry height="130" width="260" x="520" y="440" as="geometry" />
-        </mxCell>
-        <mxCell id="translation" parent="1" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#fff2cc;strokeColor=#d6b656;fontSize=12;align=left;spacingLeft=8;verticalAlign=top;spacingTop=8;" value="&lt;b&gt;PRODUCT_CATEGORY_TRANSLATION&lt;/b&gt;&lt;br&gt;PK/FK product_category_name&lt;br&gt;product_category_name_english" vertex="1">
-          <mxGeometry height="110" width="330" x="30" y="430" as="geometry" />
-        </mxCell>
-        <mxCell id="geolocation" parent="1" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#f5f5f5;strokeColor=#666666;fontSize=12;align=left;spacingLeft=8;verticalAlign=top;spacingTop=8;" value="&lt;b&gt;GEOLOCATION&lt;/b&gt;&lt;br&gt;ZIP prefix&lt;br&gt;geolocation_lat&lt;br&gt;geolocation_lng&lt;br&gt;geolocation_city&lt;br&gt;geolocation_state" vertex="1">
-          <mxGeometry height="130" width="270" x="70" y="635" as="geometry" />
-        </mxCell>
-        <mxCell id="e1" edge="1" parent="1" source="order_items" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;endArrow=ERmany;startArrow=ERone;" target="orders" value="1 : N">
-          <mxGeometry relative="1" as="geometry" />
-        </mxCell>
-        <mxCell id="e2" edge="1" parent="1" source="orders" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;endArrow=ERmany;startArrow=ERone;" target="order_items" value="1 : N">
-          <mxGeometry relative="1" as="geometry" />
-        </mxCell>
-        <mxCell id="e3" edge="1" parent="1" source="orders" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;endArrow=ERmany;startArrow=ERone;" target="payments" value="1 : N">
-          <mxGeometry relative="1" as="geometry" />
-        </mxCell>
-        <mxCell id="e4" edge="1" parent="1" source="orders" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;endArrow=ERmany;startArrow=ERone;" target="reviews" value="1 : N">
-          <mxGeometry relative="1" as="geometry" />
-        </mxCell>
-        <mxCell id="e5" edge="1" parent="1" source="products" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;endArrow=ERmany;startArrow=ERone;" target="order_items" value="1 : N">
-          <mxGeometry relative="1" as="geometry" />
-        </mxCell>
-        <mxCell id="e6" edge="1" parent="1" source="sellers" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;endArrow=ERmany;startArrow=ERone;" target="order_items" value="1 : N">
-          <mxGeometry relative="1" as="geometry" />
-        </mxCell>
-        <mxCell id="e7" edge="1" parent="1" source="translation" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;endArrow=ERmany;startArrow=ERone;" target="products" value="1 : N">
-          <mxGeometry relative="1" as="geometry" />
-        </mxCell>
-        <mxCell id="e8" edge="1" parent="1" source="customers" style="edgeStyle=orthogonalEdgeStyle;dashed=1;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;endArrow=none;" target="geolocation" value="zip prefix (logical link)">
-          <mxGeometry relative="1" as="geometry" />
-        </mxCell>
-        <mxCell id="e9" edge="1" parent="1" source="sellers" style="edgeStyle=orthogonalEdgeStyle;dashed=1;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;endArrow=none;" target="geolocation" value="zip prefix (logical link)">
-          <mxGeometry relative="1" as="geometry" />
-        </mxCell>
-        <mxCell id="note" parent="1" style="shape=note;whiteSpace=wrap;html=1;fillColor=#fff2cc;strokeColor=#d6b656;fontSize=12;align=left;spacingLeft=8;verticalAlign=top;spacingTop=8;" value="Olist Brazilian E-Commerce Dataset&lt;br&gt;&lt;br&gt;Solid lines = primary/foreign-key relationships&lt;br&gt;Dashed lines = logical ZIP-prefix relationship (not a strict FK)" vertex="1">
-          <mxGeometry height="120" width="520" x="50" y="1740" as="geometry" />
-        </mxCell>
-        <mxCell id="ObjY4DT05JNlyVecteHP-1" edge="1" parent="1" source="orders" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;endArrow=ERmany;startArrow=ERone;" target="order_items" value="">
-          <mxGeometry relative="1" as="geometry">
-            <mxPoint x="780" y="325" as="sourcePoint" />
-            <mxPoint x="1110" y="230" as="targetPoint" />
-          </mxGeometry>
-        </mxCell>
-        <mxCell id="order_items" parent="1" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366;fontSize=12;align=left;spacingLeft=8;verticalAlign=top;spacingTop=8;" value="&lt;b&gt;ORDER_ITEMS&lt;/b&gt;&lt;br&gt;PK/FK order_id&lt;br&gt;PK order_item_id&lt;br&gt;FK product_id&lt;br&gt;FK seller_id&lt;br&gt;shipping_limit_date&lt;br&gt;price&lt;br&gt;freight_value" vertex="1">
-          <mxGeometry height="170" width="280" x="980" y="70" as="geometry" />
-        </mxCell>
-        <mxCell id="ObjY4DT05JNlyVecteHP-2" edge="1" parent="1" source="customers" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;endArrow=ERmany;startArrow=ERone;" target="orders" value="">
-          <mxGeometry relative="1" as="geometry">
-            <mxPoint x="780" y="325" as="sourcePoint" />
-            <mxPoint x="1120" y="240" as="targetPoint" />
-          </mxGeometry>
-        </mxCell>
-        <mxCell id="orders" parent="1" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#fff2cc;strokeColor=#d6b656;fontSize=12;align=left;spacingLeft=8;verticalAlign=top;spacingTop=8;" value="&lt;b&gt;ORDERS&lt;/b&gt;&lt;br&gt;PK order_id&lt;br&gt;FK customer_id&lt;br&gt;order_status&lt;br&gt;order_purchase_timestamp&lt;br&gt;order_approved_at&lt;br&gt;order_delivered_carrier_date&lt;br&gt;order_delivered_customer_date&lt;br&gt;order_estimated_delivery_date" vertex="1">
-          <mxGeometry height="190" width="300" x="970" y="280" as="geometry" />
-        </mxCell>
-      </root>
-    </mxGraphModel>
-  </diagram>
+<mxfile host="65bd71144e">
+    <diagram id="olist-er" name="Olist ER Diagram">
+        <mxGraphModel dx="1157" dy="862" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1800" pageHeight="1200" math="0" shadow="0">
+            <root>
+                <mxCell id="0"/>
+                <mxCell id="1" parent="0"/>
+                <mxCell id="customers" parent="1" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;fontSize=12;align=left;spacingLeft=8;verticalAlign=top;spacingTop=8;" value="&lt;b&gt;CUSTOMERS&lt;/b&gt;&lt;br&gt;PK customer_id&lt;br&gt;customer_unique_id&lt;br&gt;customer_zip_code_prefix&lt;br&gt;customer_city&lt;br&gt;customer_state" vertex="1">
+                    <mxGeometry height="150" width="260" x="520" y="250" as="geometry"/>
+                </mxCell>
+                <mxCell id="payments" parent="1" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#f8cecc;strokeColor=#b85450;fontSize=12;align=left;spacingLeft=8;verticalAlign=top;spacingTop=8;" value="&lt;b&gt;ORDER_PAYMENTS&lt;/b&gt;&lt;br&gt;PK/FK order_id&lt;br&gt;PK payment_sequential&lt;br&gt;payment_type&lt;br&gt;payment_installments&lt;br&gt;payment_value" vertex="1">
+                    <mxGeometry height="140" width="270" x="960" y="520" as="geometry"/>
+                </mxCell>
+                <mxCell id="reviews" parent="1" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#e1d5e7;strokeColor=#9673a6;fontSize=12;align=left;spacingLeft=8;verticalAlign=top;spacingTop=8;" value="&lt;b&gt;ORDER_REVIEWS&lt;/b&gt;&lt;br&gt;FK order_id&lt;br&gt;PK review_id&lt;br&gt;review_score&lt;br&gt;review_comment_title&lt;br&gt;review_comment_message&lt;br&gt;review_creation_date&lt;br&gt;review_answer_timestamp" vertex="1">
+                    <mxGeometry height="160" width="280" x="950" y="700" as="geometry"/>
+                </mxCell>
+                <mxCell id="products" parent="1" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366;fontSize=12;align=left;spacingLeft=8;verticalAlign=top;spacingTop=8;" value="&lt;b&gt;PRODUCTS&lt;/b&gt;&lt;br&gt;PK product_id&lt;br&gt;FK category_name&lt;br&gt;product_name_length&lt;br&gt;product_description_length&lt;br&gt;product_photos_qty&lt;br&gt;product_weight_g&lt;br&gt;product_length_cm&lt;br&gt;product_height_cm&lt;br&gt;product_width_cm" vertex="1">
+                    <mxGeometry height="190" width="300" x="40" y="60" as="geometry"/>
+                </mxCell>
+                <mxCell id="sellers" parent="1" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;fontSize=12;align=left;spacingLeft=8;verticalAlign=top;spacingTop=8;" value="&lt;b&gt;SELLERS&lt;/b&gt;&lt;br&gt;PK seller_id&lt;br&gt;seller_zip_code_prefix&lt;br&gt;seller_city&lt;br&gt;seller_state" vertex="1">
+                    <mxGeometry height="130" width="260" x="520" y="440" as="geometry"/>
+                </mxCell>
+                <mxCell id="translation" parent="1" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#fff2cc;strokeColor=#d6b656;fontSize=12;align=left;spacingLeft=8;verticalAlign=top;spacingTop=8;" value="&lt;b&gt;PRODUCT_CATEGORY_TRANSLATION&lt;/b&gt;&lt;br&gt;PK/FK product_category_name&lt;br&gt;product_category_name_english" vertex="1">
+                    <mxGeometry height="110" width="330" x="30" y="430" as="geometry"/>
+                </mxCell>
+                <mxCell id="geolocation" parent="1" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#f5f5f5;strokeColor=#666666;fontSize=12;align=left;spacingLeft=8;verticalAlign=top;spacingTop=8;" value="&lt;b&gt;GEOLOCATION&lt;/b&gt;&lt;br&gt;ZIP prefix&lt;br&gt;geolocation_lat&lt;br&gt;geolocation_lng&lt;br&gt;geolocation_city&lt;br&gt;geolocation_state" vertex="1">
+                    <mxGeometry height="130" width="270" x="70" y="635" as="geometry"/>
+                </mxCell>
+                <mxCell id="e1" edge="1" parent="1" source="order_items" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;endArrow=ERmany;startArrow=ERone;" target="orders" value="1 : N">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="e2" edge="1" parent="1" source="orders" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;endArrow=ERmany;startArrow=ERone;" target="order_items" value="1 : N">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="e3" edge="1" parent="1" source="orders" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;endArrow=ERmany;startArrow=ERone;" target="payments" value="1 : N">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="e4" edge="1" parent="1" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;endArrow=ERmany;startArrow=ERone;" value="1 : N">
+                    <mxGeometry relative="1" as="geometry">
+                        <mxPoint x="1179.996923076923" y="470" as="sourcePoint"/>
+                        <mxPoint x="1149.996923076923" y="700" as="targetPoint"/>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="e5" edge="1" parent="1" source="products" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;endArrow=ERmany;startArrow=ERone;" target="order_items" value="1 : N">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="e6" edge="1" parent="1" source="sellers" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;endArrow=ERmany;startArrow=ERone;" target="order_items" value="1 : N">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="e7" edge="1" parent="1" source="translation" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;endArrow=ERmany;startArrow=ERone;" target="products" value="1 : N">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="e8" edge="1" parent="1" source="customers" style="edgeStyle=orthogonalEdgeStyle;dashed=1;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;endArrow=none;" target="geolocation" value="zip prefix (logical link)">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="e9" edge="1" parent="1" style="edgeStyle=orthogonalEdgeStyle;dashed=1;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;endArrow=none;" value="zip prefix (logical link)">
+                    <mxGeometry relative="1" as="geometry">
+                        <mxPoint x="555" y="505" as="sourcePoint"/>
+                        <mxPoint x="239.9999999999999" y="635" as="targetPoint"/>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="note" parent="1" style="shape=note;whiteSpace=wrap;html=1;fillColor=#fff2cc;strokeColor=#d6b656;fontSize=12;align=left;spacingLeft=8;verticalAlign=top;spacingTop=8;" value="Olist Brazilian E-Commerce Dataset&lt;br&gt;&lt;br&gt;Solid lines = primary/foreign-key relationships&lt;br&gt;Dashed lines = logical ZIP-prefix relationship (not a strict FK)" vertex="1">
+                    <mxGeometry height="120" width="520" x="50" y="1740" as="geometry"/>
+                </mxCell>
+                <mxCell id="ObjY4DT05JNlyVecteHP-1" edge="1" parent="1" source="orders" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;endArrow=ERmany;startArrow=ERone;" target="order_items" value="">
+                    <mxGeometry relative="1" as="geometry">
+                        <mxPoint x="780" y="325" as="sourcePoint"/>
+                        <mxPoint x="1110" y="230" as="targetPoint"/>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="order_items" parent="1" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366;fontSize=12;align=left;spacingLeft=8;verticalAlign=top;spacingTop=8;" value="&lt;b&gt;ORDER_ITEMS&lt;/b&gt;&lt;br&gt;PK/FK order_id&lt;br&gt;PK order_item_id&lt;br&gt;FK product_id&lt;br&gt;FK seller_id&lt;br&gt;shipping_limit_date&lt;br&gt;price&lt;br&gt;freight_value" vertex="1">
+                    <mxGeometry height="170" width="280" x="980" y="70" as="geometry"/>
+                </mxCell>
+                <mxCell id="ObjY4DT05JNlyVecteHP-2" edge="1" parent="1" source="customers" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;endArrow=ERmany;startArrow=ERone;" target="orders" value="">
+                    <mxGeometry relative="1" as="geometry">
+                        <mxPoint x="780" y="325" as="sourcePoint"/>
+                        <mxPoint x="1120" y="240" as="targetPoint"/>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="orders" parent="1" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#fff2cc;strokeColor=#d6b656;fontSize=12;align=left;spacingLeft=8;verticalAlign=top;spacingTop=8;" value="&lt;b&gt;ORDERS&lt;/b&gt;&lt;br&gt;PK order_id&lt;br&gt;FK customer_id&lt;br&gt;order_status&lt;br&gt;order_purchase_timestamp&lt;br&gt;order_approved_at&lt;br&gt;order_delivered_carrier_date&lt;br&gt;order_delivered_customer_date&lt;br&gt;order_estimated_delivery_date" vertex="1">
+                    <mxGeometry height="190" width="300" x="970" y="280" as="geometry"/>
+                </mxCell>
+            </root>
+        </mxGraphModel>
+    </diagram>
 </mxfile>
