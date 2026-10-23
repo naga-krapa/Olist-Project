@@ -1,6 +1,6 @@
 <mxfile host="65bd71144e">
     <diagram id="olist-er" name="Olist ER Diagram">
-        <mxGraphModel dx="1157" dy="862" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1800" pageHeight="1200" math="0" shadow="0">
+        <mxGraphModel dx="1693" dy="773" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1800" pageHeight="1200" math="0" shadow="0">
             <root>
                 <mxCell id="0"/>
                 <mxCell id="1" parent="0"/>
@@ -59,7 +59,7 @@
                     </mxGeometry>
                 </mxCell>
                 <mxCell id="note" parent="1" style="shape=note;whiteSpace=wrap;html=1;fillColor=#fff2cc;strokeColor=#d6b656;fontSize=12;align=left;spacingLeft=8;verticalAlign=top;spacingTop=8;" value="Olist Brazilian E-Commerce Dataset&lt;br&gt;&lt;br&gt;Solid lines = primary/foreign-key relationships&lt;br&gt;Dashed lines = logical ZIP-prefix relationship (not a strict FK)" vertex="1">
-                    <mxGeometry height="120" width="520" x="50" y="1740" as="geometry"/>
+                    <mxGeometry height="120" width="520" x="40" y="840" as="geometry"/>
                 </mxCell>
                 <mxCell id="ObjY4DT05JNlyVecteHP-1" edge="1" parent="1" source="orders" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;endArrow=ERmany;startArrow=ERone;" target="order_items" value="">
                     <mxGeometry relative="1" as="geometry">
